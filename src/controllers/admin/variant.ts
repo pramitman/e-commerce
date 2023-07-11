@@ -26,9 +26,8 @@ export const add_variant = async(req, res)=>{
 
 export const edit_variant_by_id = async(req, res)=>{
     reqInfo(req)
-    let body = req.body, {user} = req.headers
+    let body = req.body
     try{
-        body.updatedBy = ObjectId(user?._id)
         const response = await variantModel.findOneAndUpdate({_id: ObjectId(body._id), isDeleted:false}, body, {new:true})
         if(!response) return res.status(404).json(new apiResponse(404, responseMessage?.updateDataError("variant"),{},{}))
         return res.status(200).json(new apiResponse(200, responseMessage?.updateDataSuccess("variant"),response,{}))
