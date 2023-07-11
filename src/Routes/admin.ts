@@ -5,6 +5,9 @@ import { adminController, authController } from '../controllers'
 const router = Router()
 
 
+router.post("/signUp",adminController.signUp)
+router.post("/login",adminController.login)
+
 router.post("/variant/add",  adminController.add_variant)
 router.post("/variant/edit", adminController.edit_variant_by_id)
 router.delete("/variant/:id",   adminController.delete_variant_by_id)
