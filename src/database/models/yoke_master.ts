@@ -1,10 +1,10 @@
 var mongoose = require('mongoose')
 
-const pocketMasterSchema = new mongoose.Schema({
+const yokeMasterSchema = new mongoose.Schema({
     name : {type : String},
     photo : {type : String},
     isDeleted: { type: Boolean, default: false },
     isBlocked: { type: Boolean, default: false },
 }, { timestamps: true })
 
-export const pocketMasterModel = mongoose.model('pocket_master', pocketMasterSchema)
+export const yokeMasterModel = mongoose.model('yoke_master', yokeMasterSchema)

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-// import mongoose from 'mongoose'
+
 const buttonMasterSchema = new mongoose.Schema({
     name : {type : String},
     photo : {type : String},

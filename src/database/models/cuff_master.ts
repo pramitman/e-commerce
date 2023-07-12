@@ -1,7 +1,7 @@
 import { sleeve } from "../../common"
 
 var mongoose = require('mongoose')
-// import mongoose from 'mongoose'
+
 const cuffMasterSchema = new mongoose.Schema({
     sleeve : {type : String, enum : sleeve},
     name : {type : String},

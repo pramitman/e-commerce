@@ -25,6 +25,10 @@ const variantSchema = new mongoose.Schema({
                     frontStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "front_master"},  
                     photo : {type : String}
                 }],
+                yokes : [{
+                    yokeStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "yoke_master"},  
+                    photo : {type : String}
+                }],
             }
         ],
     isDeleted: { type: Boolean, default: false },
