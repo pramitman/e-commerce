@@ -1,4 +1,4 @@
-import { apiResponse, generatePassword, generateUserId } from "../../common";
+import { apiResponse } from "../../common";
 import { collarMasterModel, variantModel } from "../../database";
 import { reqInfo, responseMessage } from "../../helper"
 
@@ -19,9 +19,8 @@ export const add_collar_master = async(req, res)=>{
 
 export const edit_collar_master_by_id = async(req, res)=>{
     reqInfo(req)
-    let body = req.body, {user} = req.headers
+    let body = req.body
     try{
-        body.updatedBy = ObjectId(user?._id)
         const response = await collarMasterModel.findOneAndUpdate({_id:ObjectId(body._id), isDeleted:false}, body, {new:true})
         if(!response) return res.status(405).json(new apiResponse(405, responseMessage?.updateDataError("collar"),{},{}))
         return res.status(200).json(new apiResponse(200, responseMessage?.updateDataSuccess("collar"),response,{}))

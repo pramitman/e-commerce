@@ -6,15 +6,19 @@ const variantSchema = new mongoose.Schema({
             {
                 fabId : {type : mongoose.Schema.Types.ObjectId, ref:"fabric_master"},
                 collars : [{
-                    collarStyleId: {type : mongoose.Schema.Types.ObjectId, ref : "collar_master"},
+                    collarStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "collar_master"},
                     photo : {type : String}
                 }],     
                 buttons : [{
-                    buttonStyleId:   {type : mongoose.Schema.Types.ObjectId, ref : "button_master"},  
+                    buttonStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "button_master"},  
                     photo : {type : String}
                 }],
                 cuffs : [{
-                    cuffStyleId:   {type : mongoose.Schema.Types.ObjectId, ref : "cuff_master"},  
+                    cuffStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "cuff_master"},  
+                    photo : {type : String}
+                }],
+                pockets : [{
+                    pocketStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "pocket_master"},  
                     photo : {type : String}
                 }],
             }
