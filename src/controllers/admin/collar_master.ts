@@ -39,9 +39,8 @@ export const delete_collar_master_by_id = async(req, res)=>{
         if(!response) return res.status(400).json(new apiResponse(400, responseMessage?.getDataNotFound("collar"),{},{}))
         const variants = await variantModel.find({"variants.collars.collarStyleId": ObjectId(id),isDelted : false});
         await variantModel.updateMany({ "variants.collars.collarStyleId": ObjectId(id), isDeleted: false },
-        { $pull: { "variants.$[].collars": { collarStyleId: ObjectId(id) } } }
-          );
-
+            { $pull: { "variants.$[].collars": { collarStyleId: ObjectId(id) } } }
+        );
          
         return res.status(200).json(new apiResponse(200, responseMessage?.deleteDataSuccess("collar"),response,{}))
     }catch(error){

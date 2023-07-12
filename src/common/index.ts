@@ -39,3 +39,8 @@ export const  generatePassword =() => {
     }
     return password;
 }
+
+export const sleeve = [
+    "short",
+    "long"
+]

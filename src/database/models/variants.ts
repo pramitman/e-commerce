@@ -12,7 +12,11 @@ const variantSchema = new mongoose.Schema({
                 buttons : [{
                     buttonStyleId:   {type : mongoose.Schema.Types.ObjectId, ref : "button_master"},  
                     photo : {type : String}
-                }]
+                }],
+                cuffs : [{
+                    cuffStyleId:   {type : mongoose.Schema.Types.ObjectId, ref : "cuff_master"},  
+                    photo : {type : String}
+                }],
             }
         ],
     isDeleted: { type: Boolean, default: false },
