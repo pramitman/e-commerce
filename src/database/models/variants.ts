@@ -21,6 +21,10 @@ const variantSchema = new mongoose.Schema({
                     pocketStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "pocket_master"},  
                     photo : {type : String}
                 }],
+                fronts : [{
+                    frontStyleId : {type : mongoose.Schema.Types.ObjectId, ref : "front_master"},  
+                    photo : {type : String}
+                }],
             }
         ],
     isDeleted: { type: Boolean, default: false },
