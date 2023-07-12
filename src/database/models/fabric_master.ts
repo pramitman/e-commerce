@@ -4,6 +4,7 @@ const fabricMasterSchema = new mongoose.Schema({
     name : {type : String},
     photo : {type : String},
     uniqueId : {type : String},
+    base : {type : String},
     isDeleted: { type: Boolean, default: false },
     isBlocked: { type: Boolean, default: false },
 }, { timestamps: true })
